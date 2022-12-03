@@ -30,12 +30,12 @@ app.post(
         check('name', 'Please enter your name')
             .not()
             .isEmpty(),
-        check('date', 'Please enter a valid date')
+        check('date', 'Please enter a valid date in format of YYYY-MM-DD')
             .isDate(),
-        check('mileage', 'Please enter a run mileage')
-            .isNan(),
-        check('time', 'Please enter completed run time')
-            .isNan()
+        check('mileage', 'Please enter a run mileage 00.00')
+            .isNumeric(),
+        check('time', 'Please enter completed run time in format of 00.00')
+            .isNumeric()
     ],
     (req, res) => {
         const errors = validationResult(req);
