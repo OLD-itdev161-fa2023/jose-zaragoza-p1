@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema({
     mileage: {
         type: Number,
         required: true
-    }
+    },
     time: {
         type: Number,
         required: true
